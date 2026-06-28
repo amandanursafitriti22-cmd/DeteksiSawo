@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import server from "../dist/server/server.js";
+import * as serverModule from "../dist/server/server.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distClientDir = path.join(__dirname, "..", "dist", "client");
@@ -50,7 +50,13 @@ export default async function handler(req, res) {
     body: ["GET", "HEAD"].includes(req.method) ? undefined : req,
   });
 
-  const response = await server.default.fetch(request);
+  const server = serverModule.a4 || serverModule.default || serverModule;
+  const fetchHandler = server?.fetch || server?.default?.fetch;
+  if (!fetchHandler) {
+    throw new Error("Server module does not expose a fetch handler. Imported module keys: " + Object.keys(serverModule).join(", "));
+  }
+
+  const response = await fetchHandler.call(server, request);
 
   res.statusCode = response.status;
   response.headers.forEach((value, name) => {

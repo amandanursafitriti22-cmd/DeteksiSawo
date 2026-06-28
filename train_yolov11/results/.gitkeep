@@ -1,0 +1,5 @@
+# Folder ini akan berisi output training YOLOv11
+# File-file yang akan di-generate otomatis oleh Colab:
+# - best.pt, last.pt, best.onnx
+# - confusion_matrix.png, results.png, results.csv
+# - training curves, val predictions, dll.

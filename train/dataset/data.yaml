@@ -1,0 +1,7 @@
+path: F:/JOKI/BARUDAK NUSA PUTRA/BARUDAK TI/Amanda/Skripsi/Project-Sawo/train/dataset
+train: train/images
+val: valid/images
+nc: 2
+names:
+  0: matang
+  1: mentah

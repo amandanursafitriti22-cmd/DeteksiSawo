@@ -1,0 +1,202 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * SawoVision design system.
+ * Palette: hijau alami (primary) + cokelat sawo (accent) + krem (background).
+ * All colors in oklch. Class colors for ripeness map to a stable set of tokens.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-unripe: var(--ripe-unripe);
+  --color-half: var(--ripe-half);
+  --color-ripe: var(--ripe-ripe);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Krem hangat */
+  --background: oklch(0.985 0.012 95);
+  --foreground: oklch(0.22 0.04 145);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 145);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 145);
+
+  /* Hijau daun alami */
+  --primary: oklch(0.5 0.13 150);
+  --primary-foreground: oklch(0.985 0.012 95);
+  --primary-glow: oklch(0.72 0.18 145);
+
+  --secondary: oklch(0.95 0.025 110);
+  --secondary-foreground: oklch(0.28 0.05 145);
+
+  --muted: oklch(0.95 0.018 100);
+  --muted-foreground: oklch(0.5 0.03 130);
+
+  /* Cokelat sawo */
+  --accent: oklch(0.55 0.1 60);
+  --accent-foreground: oklch(0.985 0.012 95);
+
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.985 0.012 95);
+
+  --border: oklch(0.9 0.02 110);
+  --input: oklch(0.9 0.02 110);
+  --ring: oklch(0.5 0.13 150);
+
+  /* Ripeness class colors */
+  --ripe-unripe: oklch(0.62 0.18 145);   /* green */
+  --ripe-half: oklch(0.78 0.16 75);      /* amber */
+  --ripe-ripe: oklch(0.52 0.13 50);      /* sawo brown */
+
+  --chart-1: var(--ripe-unripe);
+  --chart-2: var(--ripe-half);
+  --chart-3: var(--ripe-ripe);
+  --chart-4: oklch(0.65 0.15 200);
+  --chart-5: oklch(0.5 0.13 150);
+
+  --sidebar: oklch(0.98 0.012 100);
+  --sidebar-foreground: oklch(0.22 0.04 145);
+  --sidebar-primary: oklch(0.5 0.13 150);
+  --sidebar-primary-foreground: oklch(0.985 0.012 95);
+  --sidebar-accent: oklch(0.95 0.025 110);
+  --sidebar-accent-foreground: oklch(0.28 0.05 145);
+  --sidebar-border: oklch(0.9 0.02 110);
+  --sidebar-ring: oklch(0.5 0.13 150);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.5 0.13 150) 0%, oklch(0.55 0.1 60) 100%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.985 0.012 95) 0%, oklch(0.95 0.03 110) 100%);
+  --shadow-elegant: 0 12px 40px -12px oklch(0.5 0.13 150 / 0.25);
+  --shadow-soft: 0 4px 20px -8px oklch(0.4 0.05 130 / 0.15);
+}
+
+.dark {
+  --background: oklch(0.18 0.025 150);
+  --foreground: oklch(0.96 0.015 100);
+
+  --card: oklch(0.22 0.03 150);
+  --card-foreground: oklch(0.96 0.015 100);
+  --popover: oklch(0.22 0.03 150);
+  --popover-foreground: oklch(0.96 0.015 100);
+
+  --primary: oklch(0.72 0.16 145);
+  --primary-foreground: oklch(0.18 0.025 150);
+  --primary-glow: oklch(0.8 0.18 145);
+
+  --secondary: oklch(0.28 0.04 150);
+  --secondary-foreground: oklch(0.96 0.015 100);
+
+  --muted: oklch(0.26 0.03 150);
+  --muted-foreground: oklch(0.72 0.03 110);
+
+  --accent: oklch(0.68 0.14 60);
+  --accent-foreground: oklch(0.18 0.025 150);
+
+  --destructive: oklch(0.65 0.22 27);
+  --destructive-foreground: oklch(0.96 0.015 100);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.72 0.16 145);
+
+  --ripe-unripe: oklch(0.75 0.18 145);
+  --ripe-half: oklch(0.82 0.17 75);
+  --ripe-ripe: oklch(0.65 0.14 50);
+
+  --chart-1: var(--ripe-unripe);
+  --chart-2: var(--ripe-half);
+  --chart-3: var(--ripe-ripe);
+  --chart-4: oklch(0.7 0.15 200);
+  --chart-5: oklch(0.72 0.16 145);
+
+  --sidebar: oklch(0.22 0.03 150);
+  --sidebar-foreground: oklch(0.96 0.015 100);
+  --sidebar-primary: oklch(0.72 0.16 145);
+  --sidebar-primary-foreground: oklch(0.18 0.025 150);
+  --sidebar-accent: oklch(0.28 0.04 150);
+  --sidebar-accent-foreground: oklch(0.96 0.015 100);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.72 0.16 145);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.4 0.13 150) 0%, oklch(0.45 0.1 60) 100%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.18 0.025 150) 0%, oklch(0.22 0.04 150) 100%);
+  --shadow-elegant: 0 12px 40px -12px oklch(0 0 0 / 0.5);
+  --shadow-soft: 0 4px 20px -8px oklch(0 0 0 / 0.3);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 30%, transparent);
+  }
+}
+
+@utility bg-gradient-hero {
+  background-image: var(--gradient-hero);
+}
+@utility bg-gradient-soft {
+  background-image: var(--gradient-soft);
+}
+@utility shadow-elegant {
+  box-shadow: var(--shadow-elegant);
+}
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}

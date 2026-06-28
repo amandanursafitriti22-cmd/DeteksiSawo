@@ -1,0 +1,32 @@
+Dataset: Sawo Ripeness Detection
+Created: 2026-05-16
+Annotator: Tim Labeling
+
+Description:
+- Project untuk deteksi 3 kelas kematangan buah sawo
+- Menggunakan YOLOv11 untuk object detection
+- Labels di-annotate menggunakan Label Studio
+
+Classes:
+1. belum_matang - Kulit hijau, keras, getah putih masih banyak
+2. setengah_matang - Hijau kekuningan, mulai melunak, aroma samar
+3. matang - Kulit cokelat sawo, lunak, manis dan beraroma
+
+Statistics:
+- Total images: [akan diisi setelah export]
+- Training images: [80% dari total]
+- Validation images: [20% dari total]
+- Total bounding boxes: [akan dihitung]
+
+Annotations:
+- Tool: Label Studio
+- Format: YOLO (normalized coordinates)
+- Quality: [Manual review oleh tim]
+
+Notes:
+- Pastikan gambar dengan berbagai kondisi cahaya
+- Hindari duplikat atau sangat mirip
+- Balance antara ketiga class
+- Resolusi gambar optimal: 640x640
+
+Version: 1.0
